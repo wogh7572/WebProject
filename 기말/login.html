@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Nemo Test</title>
+    <link rel="stylesheet" href="login.css">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+    </style>
+    <script>
+      function check() {
+        var toggle = document.getElementById('togglepw');
+        var pw = document.getElementById('pw');
+        if (toggle.checked) {
+          pw.type = 'text';
+        }else {
+          pw.type = 'password';
+        }
+      }
+      function signup() {
+        document.getElementsByClassName("signup-box")[0].style.display = "block";
+        document.getElementsByClassName("login-box")[0].style.display = 'none';
+
+      }
+      
+      function changeBar() {
+        let box = document.getElementById("input1");
+        box.style.cssText = 
+        "border:1px solid blue;"
+      }
+      document.addEventListener("click", function(event) {
+        var inputBox1 = document.getElementById("input1");
+        var isClickInsideInput1 = inputBox1.contains(event.target);
+        
+        var inputBox2 = document.getElementById("input2");
+        var isClickInsideInput2 = inputBox2.contains(event.target);
+
+        if (!isClickInsideInput1) {
+          inputBox1.style.border = ""; // 다른 곳을 클릭했을 때 테두리 초기화
+        }
+        if (!isClickInsideInput2) {
+          inputBox2.style.border = ""; // 다른 곳을 클릭했을 때 테두리 초기화
+        }
+         });
+      function changeBar1() {
+        var box = document.getElementById("input1");
+        box.style.border = "1px solid blue"; // input을 클릭했을 때 테두리 변경
+      }
+      function changeBar2() {
+        var box = document.getElementById("input2");
+        box.style.border = "1px solid blue"; // input을 클릭했을 때 테두리 변경
+      }
+      function submitForm() {
+        var input1Value = document.getElementById("input1").value;
+        var input2Value = document.getElementById("input2").value;
+        var input_testV = document.getElementById("input_test").value;
+        if (input1Value.length<6 || input1Value.length>15) {
+          alert('id는 6~15자 입니다.');
+        }
+        else if (input2Value==input_testV) {
+          alert("등록 되었습니다.");
+          DB[input1Value] = input2Value;
+          idArray = Object.keys(DB);
+          pwArray = Object.values(DB);
+          alert(idArray.length+'번째 계정이 등록되었습니다.');
+          document.getElementById('email_id').value="";
+          document.getElementsByClassName("signup-box")[0].style.display = 'none';
+          document.getElementsByClassName("login-box")[0].style.display = "block";
+          for(let i=0; i<idArray.length; i++) {
+            alert(i+1+'번째 아이디 : '+idArray[i]);
+      }
+        }else{
+          alert("비밀번호를 확인해주세요");
+        }
+      }    
+    </script>
+  </head>
+
+  <body>
+
+    <!-- id창 -->
+    <div class="background-image"></div>
+    <div class="login-box">
+      <a href="google.html" ><img src="https://cdn.vox-cdn.com/thumbor/Pkmq1nm3skO0-j693JTMd7RL0Zk=/0x0:2012x1341/1200x800/filters:focal(0x0:2012x1341)/cdn.vox-cdn.com/uploads/chorus_image/image/47070706/google2.0.0.jpg"></a>
+      <h1>로그인</h1>
+      <x1>Google 계정 사용</x1>
+      <input type="text" class="input" id="email_id" value="" placeholder="이메일 또는 휴대전화"><br>
+      <a id="forget" href="https://accounts.google.com/v3/signin">이메일을 잊으셨나요?</a>
+      <small>내 컴퓨터가 아닌가요? 게스트 모드를 사용하여 비공개<br>로 로그인하세요.<a id="forgets" href="https://accounts.google.com/v3/signin"> 자세히 알아보기</a></small>
+      <x3 onclick="signup()">계정 만들기</x3>
+      <button class="access" type="submit" id="accessButton"> 다음 </button>
+    </div>
+
+
+
+
+    <!-- pw창 -->
+    <div class="login-pw-box">
+      <a href="google.html" ><img src="https://cdn.vox-cdn.com/thumbor/Pkmq1nm3skO0-j693JTMd7RL0Zk=/0x0:2012x1341/1200x800/filters:focal(0x0:2012x1341)/cdn.vox-cdn.com/uploads/chorus_image/image/47070706/google2.0.0.jpg"></a>
+      <h1 id="idview"></h1>
+      <input type="password" class="input" id="pw" value="" placeholder="비밀번호 입력"><br>
+      <input type="checkbox" id="togglepw" onclick="check()"><label id="toglepw" for="togglepw">비밀번호 표시</label>
+      <x3><a id="" href="https://accounts.google.com/v3/signin">비밀번호 찾기</a></x3>
+      <button class="access" type="submit" onclick="login()"> 다음 </button>
+    </div>
+    
+
+    <!-- 회원가입 창 -->
+    <div class="background-image"></div>
+    <div class="signup-box">
+        <a href="google.html" ><img src="https://cdn.vox-cdn.com/thumbor/Pkmq1nm3skO0-j693JTMd7RL0Zk=/0x0:2012x1341/1200x800/filters:focal(0x0:2012x1341)/cdn.vox-cdn.com/uploads/chorus_image/image/47070706/google2.0.0.jpg"></a>
+        <x1>Google 계정 만들기</x1>
+        <x2>아이디를 입력하세요.</x2>
+      <input type="text" id="input1" value="" placeholder="아이디" onclick="changeBar1()">
+      <input type="password" id="input2" value="" placeholder="비밀번호" onclick="changeBar2()">
+      <input type="password" id="input_test" value="" placeholder="비밀번호 확인">
+      <button type="button" onclick="submitForm()">다음</button>
+      </div>
+
+
+
+    <script>
+      let tempID="";
+      document.getElementsByClassName("signup-box")[0].style.display = 'none';
+      document.getElementsByClassName("login-box")[0].style.display = "block";
+      document.getElementsByClassName("login-pw-box")[0].style.display = "none";
+      const accessButton = document.getElementById('accessButton');
+      let DB = {'admin':'qwer1234', 'wogh7572':'qwer1234'};
+      let idArray = Object.keys(DB);
+      let pwArray = Object.values(DB);
+      for(let i=0; i<idArray.length; i++) {
+        alert(i+1+'번째 아이디 : '+idArray[i]);
+      }
+
+      const input = document.querySelector('.input');
+      input.addEventListener('keyup', e => {
+        if (idArray.includes(e.target.value)) {
+          input.style.cssText = "border-color: black; border-width:2.5px";
+        }else if (!!e.target.value) {
+          input.style.cssText = "border-color: blue";
+        } else {
+          input.style.cssText = "border-color: red";
+        }
+      });
+
+      input.addEventListener('keyup', (e) => {
+    if (e.key === "Enter") {
+      checkInputValue();
+    }
+  });
+
+  accessButton.addEventListener('click', () => {
+    checkInputValue();
+  });
+    function checkInputValue() {
+      if (idArray.includes(input.value)) {
+        input.style.cssText = "border-color: black";
+        tempID = input.value;
+        alert("아이디가 확인되었습니다.");
+        document.getElementsByClassName("login-box")[0].style.display = "none";
+        document.getElementsByClassName("login-pw-box")[0].style.display = "block";
+        document.getElementById('idview').innerHTML = tempID;
+      } else {
+        alert("올바른 이메일 또는 전화번호를 입력하세요.");
+      }
+    }
+    function login() {
+      if(DB[tempID]==document.getElementById('pw').value) {
+        alert('계정이 확인되었습니다.');
+        setTimeout(function() {
+          document.write('success');
+        }, 3000);     
+        window.location.href = "https://www.google.com";
+      }
+    }
+
+
+
+
+
+
+    </script>
+  </body>
+</html>

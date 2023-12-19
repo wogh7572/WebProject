@@ -1,0 +1,284 @@
+.header-top__right {
+margin-top: 13px;
+display: flex;
+justify-content: flex-end;
+align-items: center;
+font-size: 13px;
+}
+.right__element:hover {
+    text-decoration: underline;
+  }
+
+.left__link {
+    float:left;
+    padding-left: 10px;
+    transition: transform 5s;
+}
+
+.left__link:hover {
+    transform: matrix(2, 0, 0, 2, 10, 10);
+}
+
+.right__link_1, .right__link_2, .right__link_3 {
+    padding-right: 16px;
+    transform: matrix(1, 0, 0, 1, -10, -5);
+}
+
+.right__link_3 {
+    color: grey;
+    transform: matrix(1, 0, 0, 1, -3, -5);
+    transition: transform 5s;
+}
+.right__link_3:hover{
+    transform: matrix(1.3, 0, 0, 1.3, 0, -5);
+}
+.signbutton:hover {
+    background-color: #3865da;
+    transform: matrix(1.3, 0, 0, 1.3, 0, 0);
+}
+
+.signbutton{
+    background-color: #4885ed;
+    color: #fff;
+    border:none;
+    border-radius:3px;
+    padding:9px 18px;
+    position:relative;
+    bottom:7px;
+    font-weight:bold;
+    margin: 3px;
+    transition: transform 7s;
+}
+
+
+a {
+    color: black;
+   text-decoration: none; 
+}
+
+.center {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.center-container {
+    flex-direction: column;
+}
+
+.center-container .center__title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    font-size: 80px;
+    margin-top: 130px;
+    margin-bottom: 20px; 
+}
+
+
+.title__letter:nth-child(2){
+    transition: transform 1s;
+}
+.title__letter:nth-child(2):hover {
+    transform: matrix(2, 0, 0, 2, 0, 0);
+}
+
+.title__letter:nth-child(3){
+    transition: transform 4s;
+}
+.title__letter:nth-child(3):hover {
+    transform: matrix(3, 0, 0, 3, 0, 0);
+}
+
+.title__letter:nth-child(4){
+    transition: transform 3s;
+}
+.title__letter:nth-child(4):hover {
+    transform: rotate(360deg);
+}
+
+.title__letter:nth-child(5):hover {
+    transform: rotate(360deg);
+}
+.title__letter:nth-child(6):hover {
+    transform: rotate(360deg);
+}
+
+
+.title__letter:nth-child(1){
+    font-size: 90px;
+    transition: transform 5s;
+    animation: rotate_image 5s linear infinite;transform-origin: 50% 50%;
+}
+.title__letter:nth-child(1):active {
+    transform: matrix(5, 0, 0, 5, 110, 0);
+}
+
+@keyframes rotate_image{
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.title__letter:nth-child(1),
+.title__letter:nth-child(4){
+    color: #4285F4;
+}
+
+.title__letter:nth-child(2),
+.title__letter:nth-child(6){
+    color: #EA4335;
+}
+
+.title__letter:nth-child(3){
+    color: #FBBC05;
+}
+
+.title__letter:nth-child(5){
+    color: #34A853;
+    transition: transform 4s;
+}
+
+.title__letter:nth-child(6){
+    transform: rotate(-20deg);
+    transition: transform 5s;
+}
+.title__letter:nth-child(6):active {
+    transform: matrix(-3, 0, 0, -3, -50, 0);
+}
+
+.center-container .center__search{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    width: 585px;
+    height: 43px;
+}
+
+.center__search .search__column .input__comment{
+    height: 20px;
+    width: 448px;
+    border:none;
+    font-size: 14px;
+    transform: matrix(1, 0, 0, 1, 0, -5);
+}
+
+.center__search .search__column .input__comment:focus{
+    outline: none; 
+}
+
+.center__search:hover{
+    box-shadow : 0 1px 6px 0 rgba(32,33,36,0.28);
+    
+}
+
+.bar{
+    margin:0 auto;
+    width:575px;
+    border-radius:30px;
+    border:1px solid #dcdcdc;
+  }
+  .bar:hover{
+    box-shadow: 1px 1px 8px 1px #dcdcdc;
+  }
+  .bar:focus-within{
+    box-shadow: 1px 1px 8px 1px #dcdcdc;
+    outline:none;
+  }
+  .searchbar{
+    height:45px;
+    border:none;
+    width:500px;
+    font-size:16px;
+    outline: none;
+    
+  }
+
+
+
+.center__search .search__column i {
+    color: #222;
+    opacity: 0.6;
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+.center__search .search__column i:nth-last-child(1) {
+    padding-left: 20px;
+    padding-right: 20px;
+    color:  #4285F4;
+    opacity: 1;
+}
+
+.center__button{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+.center__button .button__google:hover,
+.center__button .button__lucky:hover{
+    box-shadow: 0 1px 5px 0 rgba(32,33,36,0.28);
+}
+
+
+.center__button .button__google,
+.center__button .button__lucky {
+    background-color: #f2f2f2;
+    border : none;
+    border-radius: 3px;
+    margin-left: 13px;
+    padding: 10px 20px;
+    font-size: 14px;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+  .voice{
+    height:20px;
+    position:relative;
+    right:30px;
+  }
+  
+  
+  
+
+  .photo {
+    height: 23px;
+    position:relative;
+    top:1.5px;
+    right: 13px;
+  }
+
+.input__comment {
+    position:relative;
+    top:7.5px;
+    left: 20px;
+}
+
+.search__icon {
+    position:relative;
+    top:10px;
+    left: 10px;
+}
+.voice:after {
+    content : '';             /*가상클래스 before, after는 무조건 content가 있어야 작동*/
+    position: absolute;       /*상위클래스icon이 relative이므로, absolute로 설정하여 동적페이지에도 같은 위치로 유지*/
+    background-color:#000;
+    width : 10px;
+    height: 10px;
+    transform: rotate(45deg) translateX(-50%);  /*transform은 한 요소에 1번밖에 못쓰므로 합쳐줘야함*/
+    bottom: -5px;
+    left: 50%;                                  /*1. 왼쪽에서 50%위치에 둔다.*/
+                                                /*2. 크기값을 50%만큼 이동시켜준다.->항상 중앙에 위치하게됨*/
+} 
